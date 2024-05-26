@@ -1,4 +1,5 @@
 import Layout from "@/components/Layout";
+import axios from "axios";
 import { useState } from "react";
 
 const DEFAULT_DATA = {
@@ -11,11 +12,30 @@ const DEFAULT_DATA = {
 
 const ResourceCreate = () => {
 
-  const [form, sestForm] = useState(DEFAULT_DATA)
+  const [form, setForm] = useState(DEFAULT_DATA)
+
+  // const submitForm = () => {
+  //   fetch("/api/resources", {
+  //     body: JSON.stringify(form),
+  //     headers: {"Content-Type": "application/json"},
+  //     method: "POST"
+  //   })
+  // }
 
   const submitForm = () => {
-    alert(JSON.stringify(form))
+    axios.post("/api/resources", form)
+      .then(res => alert(res.data))
+      .catch(err => alert(err?.response?.data))
   }
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm({
+      ...form,
+      [name]: value})
+  }
+
+  const resetForm = () => setForm(DEFAULT_DATA)
 
   return (
     <Layout>
@@ -29,7 +49,9 @@ const ResourceCreate = () => {
                   <label className="label">Title</label>
                   <div className="control">
                     <input
-                      value={form.title} 
+                      value={form.title}
+                      onChange={handleChange}
+                      name="title" 
                       className="input" 
                       type="text" 
                       placeholder="Learn Next JS" />
@@ -39,7 +61,9 @@ const ResourceCreate = () => {
                   <label className="label">Description</label>
                   <div className="control">
                     <textarea 
-                      value={form.description} 
+                      value={form.description}
+                      onChange={handleChange} 
+                      name="description" 
                       className="textarea" 
                       placeholder="Learn these technologies because they are very popular and enable better SEO"></textarea>
                   </div>
@@ -49,6 +73,8 @@ const ResourceCreate = () => {
                   <div className="control">
                     <input 
                       value={form.link} 
+                      onChange={handleChange}
+                      name="link" 
                       className="input" 
                       type="text" 
                       placeholder="https://nextjs.org/" />
@@ -58,7 +84,11 @@ const ResourceCreate = () => {
                   <label className="label">Priority</label>
                   <div className="control">
                     <div className="select">
-                      <select value={form.priority} >
+                      <select 
+                        value={form.priority}
+                        onChange={handleChange}
+                        name="priority" 
+                       >
                         <option>1</option>
                         <option>2</option>
                         <option>3</option>
@@ -70,12 +100,14 @@ const ResourceCreate = () => {
                   <label className="label">Time to Finish</label>
                   <div className="control">
                     <input 
-                      value={form.timeToFinishs} 
+                      value={form.timeToFinish}
+                      onChange={handleChange} 
+                      name="timeToFinish" 
                       className="input" 
                       type="number" 
                       placeholder="60" />
                   </div>
-                  <p class="help">Time is in minutes</p>
+                  <p className="help">Time is in minutes</p>
                 </div>
                 <div className="field is-grouped">
                   <div className="control">
@@ -85,7 +117,10 @@ const ResourceCreate = () => {
                       className="button is-link">Submit</button>
                   </div>
                   <div className="control">
-                    <button className="button is-link is-light">Cancel</button>
+                    <button 
+                      type="button"
+                      onClick={resetForm}
+                      className="button is-link is-light">Reset Form</button>
                   </div>
                 </div>
               </form>

@@ -19,6 +19,13 @@ app.get('/api/resources', (req, res) => {
   res.send(resources)
 })
 
+app.get('/api/resources/:id', (req, res) => {
+  const resources = getResources()
+  const { id } = req.params
+  const resource = resources.find(resource => resource.id === id)
+  res.send(resource)
+})
+
 app.post('/api/resources', (req, res) => {
   const resources = getResources()
   const resource = req.body

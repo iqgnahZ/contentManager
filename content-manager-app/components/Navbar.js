@@ -27,7 +27,8 @@ const Navbar = () => {
               </div>
             </div>
             <Link href="/" legacyBehavior>
-              <a className="navbar-item is-active is-size-5 has-text-weight-semibold">
+              {/* <a className="navbar-item is-active is-size-5 has-text-weight-semibold"> */}
+              <a className="navbar-item is-size-5 has-text-weight-semibold">
                 Home
               </a>
             </Link>

@@ -39,19 +39,47 @@ const ActiveResource = () => {
     return () => clearInterval(interval)
   }, [seconds])
 
+  const completeResource = () => {
+    axios.patch("/api/resources", {...resource, status:"complete"})
+      .then(_ => location.reload())
+      .catch(_ => alert('Cannot complete the resource'))
+  }
+
+  const hasResource = resource && resource.id
+  
   return (
     <div className="active-resource">
-      <h1 className="resource-name">{resource.title}</h1>
+      <h1 className="resource-name">
+        {hasResource ? resource.title : 'NO RESOURCE ACTIVE'}
+      </h1>
       <div className="time-wrapper">
-        <h2 className="elapsed-time">
-          {seconds}
-        </h2>
+        {hasResource && (
+          seconds > 0 ?
+          <h2 className="elapsed-time">
+            {seconds}
+          </h2> :
+          <h2 className="elapsed-time">
+            <button 
+              onClick={completeResource}
+              className="button is-success">
+              Click and Done!
+            </button>
+          </h2>
+          )
+        }
       </div>
-      <Link href="/" legacyBehavior>
-        <a className="button">
-          Go to resource
-        </a>
-      </Link>
+      {hasResource ?
+        <Link href={`/resources/${resource.id}`} legacyBehavior>
+          <a className="button">
+            Go to resource
+          </a>
+        </Link> :
+        <Link href="/" legacyBehavior>
+          <a className="button">
+            Go to resource
+          </a>
+        </Link>
+      }
     </div>
   )
 }

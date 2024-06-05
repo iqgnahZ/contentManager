@@ -4,41 +4,44 @@
     "description": "Add initial data test2  Update",
     "link": "Add initial data test2",
     "priority": "2",
-    "timeToFinish": "2",
+    "timeToFinish": 53,
     "createdAt": "2024-06-03T03:51:19.975Z",
-    "status": "active",
+    "status": "complete",
     "id": "1717386679975",
-    "activationTime": "2024-06-04T06:16:30.875Z"
+    "activationTime": "2024-06-05T02:54:14.248Z"
   },
   {
     "title": "Add initial data UPDATE!!",
     "description": "Add initial data test index",
     "link": "Add initial data index",
     "priority": "1",
-    "timeToFinish": "1",
+    "timeToFinish": 60,
     "createdAt": "2024-06-03T03:50:32.451Z",
-    "status": "inactive",
-    "id": "1717386632451"
+    "status": "complete",
+    "id": "1717386632451",
+    "activationTime": "2024-06-05T03:26:10.337Z"
   },
   {
-    "title": "reuseable components",
+    "title": "reuseable components update",
     "description": "reuseable components test",
     "link": "reuseable components",
     "priority": "1",
     "timeToFinish": "10",
     "createdAt": "2024-06-03T02:48:41.692Z",
-    "status": "inactive",
-    "id": "1717382921692"
+    "status": "complete",
+    "id": "1717382921692",
+    "activationTime": "2024-06-05T04:55:56.431Z"
   },
   {
-    "title": "test redirect",
+    "title": "test redirect update",
     "description": "test redirect",
     "link": "test redirect",
     "priority": "2",
-    "timeToFinish": "15",
+    "timeToFinish": 51,
     "createdAt": "2024-05-30T09:18:34.867Z",
-    "status": "inactive",
-    "id": "1717060714867"
+    "status": "complete",
+    "id": "1717060714867",
+    "activationTime": "2024-06-05T11:38:02.559Z"
   },
   {
     "title": "test createdAt",
@@ -89,50 +92,5 @@
     "createdAt": "2024-05-30T02:36:28.246Z",
     "status": "inactive",
     "id": "1717036588246"
-  },
-  {
-    "id": "1",
-    "title": "Resouce 1",
-    "description": "Resouce 1 Desc",
-    "link": "https://link.com",
-    "priority": 3,
-    "timeToFinish": 120,
-    "status": "inactive"
-  },
-  {
-    "id": "2",
-    "title": "Resouce 2",
-    "description": "Resouce 2 Desc",
-    "link": "https://link.com",
-    "priority": 2,
-    "timeToFinish": 60,
-    "status": "inactive"
-  },
-  {
-    "id": "3",
-    "title": "Resouce 3",
-    "description": "Resouce 3 Desc",
-    "link": "https://link.com",
-    "priority": 1,
-    "timeToFinish": 30,
-    "status": "inactive"
-  },
-  {
-    "id": "4",
-    "title": "Resouce 4",
-    "description": "Resouce 4 Desc",
-    "link": "https://link.com",
-    "priority": 1,
-    "timeToFinish": 30,
-    "status": "inactive"
-  },
-  {
-    "id": "fallback",
-    "title": "fallback test",
-    "description": "fallback test Desc",
-    "link": "https://link.com",
-    "priority": 1,
-    "timeToFinish": 30,
-    "status": "inactive"
   }
 ]

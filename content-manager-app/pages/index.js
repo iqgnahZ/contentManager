@@ -3,7 +3,6 @@ import Layout from "@/components/Layout";
 import ResourceHightlight from "@/components/ResourceHightlight";
 import ResourceList from "@/components/ResourceList";
 import Footer from "@/components/Footer";
-import resources from "./api/resources";
 
 
 function Home({resources}) {
@@ -15,7 +14,7 @@ function Home({resources}) {
       />
       <Newsletter />
       <ResourceList 
-        resources = {resources.slice(2)}
+        resources={resources.slice(2)} collapsible={true}
       />
       <Footer />
     </Layout>
@@ -26,7 +25,7 @@ function Home({resources}) {
 // function is executed on the server
 export async function getServerSideProps() {
   
-  const resData = await fetch("http://localhost:3001/api/resources")
+  const resData = await fetch(`${process.env.API_URL}/resources`)
   const data = await resData.json()
 
   return {

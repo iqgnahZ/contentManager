@@ -37,9 +37,11 @@ const Navbar = () => {
                 Add
               </a>
             </Link>
+            <Link href="/login" legacyBehavior>
             <a className="navbar-item is-size-5 has-text-weight-semibold">
-              Features
+              Login
             </a>
+            </Link>
           </div>
         </div>
       </div>

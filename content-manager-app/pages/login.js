@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import Login from '@/components/Login';
-import '../styles/auth.css'; 
 
 const LoginPage = () => {
   return (
